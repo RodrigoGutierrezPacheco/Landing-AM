@@ -6,7 +6,7 @@ import './globals.css'
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
-const shareImageAlt = 'AM Pachuca — vista previa del sitio web'
+const shareImageAlt = 'AM Pachuca — Tu agencia de viajes en Pachuca'
 
 /** URL pública del sitio: necesaria para que og:image y enlaces absolutos funcionen al compartir. */
 function getMetadataBase(): URL {
