@@ -6,8 +6,6 @@ import './globals.css'
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
-const shareImageAlt = 'AM Pachuca — Tu agencia de viajes en Pachuca'
-
 /** URL pública del sitio: necesaria para que og:image y enlaces absolutos funcionen al compartir. */
 function getMetadataBase(): URL {
   const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim()
@@ -53,23 +51,6 @@ export const metadata: Metadata = {
     title: siteTitle,
     description: siteDescription,
     images: ['/opengraph-image'],
-  },
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
   },
 }
 
