@@ -46,15 +46,7 @@ export const metadata: Metadata = {
     locale: 'es_MX',
     siteName: 'AM Pachuca',
     title: siteTitle,
-    description: siteDescription,
-    images: [
-      {
-        url: '/opengraph-image',
-        width: 1200,
-        height: 630,
-        alt: shareImageAlt,
-      },
-    ],
+    description: siteDescription, 
   },
   twitter: {
     card: 'summary_large_image',
