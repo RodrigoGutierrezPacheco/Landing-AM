@@ -44,12 +44,6 @@ export function InterestForm({ promotion, isOpen, onClose }: InterestFormProps) 
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1500))
 
-    console.log("[v0] Order submitted:", {
-      promotion: promotion?.title,
-      ...formData,
-      timestamp: new Date().toISOString()
-    })
-
     setIsSubmitting(false)
     setIsSuccess(true)
 

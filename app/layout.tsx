@@ -6,11 +6,43 @@ import './globals.css'
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
+/** URL pública del sitio: necesaria para que og:image y enlaces absolutos funcionen al compartir. */
+function getMetadataBase(): URL {
+  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim()
+  if (fromEnv) {
+    try {
+      return new URL(fromEnv)
+    } catch {
+      /* sigue con fallbacks */
+    }
+  }
+  if (process.env.VERCEL_URL) {
+    return new URL(`https://${process.env.VERCEL_URL}`)
+  }
+  return new URL('http://localhost:3000')
+}
+
+const siteTitle = 'AM Pachuca | Agencia de Viajes'
+const siteDescription =
+  'Tu agencia de viajes en Pachuca. Descubre nuestros paquetes turísticos, promociones exclusivas y los mejores destinos para tus vacaciones.'
+
 export const metadata: Metadata = {
-  title: 'AM Pachuca | Agencia de Viajes',
-  description: 'Tu agencia de viajes en Pachuca. Descubre nuestros paquetes turísticos, promociones exclusivas y los mejores destinos para tus vacaciones.',
-  generator: 'v0.app',
+  metadataBase: getMetadataBase(),
+  title: siteTitle,
+  description: siteDescription,
   keywords: ['viajes', 'turismo', 'Pachuca', 'paquetes turísticos', 'vacaciones', 'promociones'],
+  openGraph: {
+    type: 'website',
+    locale: 'es_MX',
+    siteName: 'AM Pachuca',
+    title: siteTitle,
+    description: siteDescription,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteTitle,
+    description: siteDescription,
+  },
   icons: {
     icon: [
       {

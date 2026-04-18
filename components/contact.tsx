@@ -46,7 +46,6 @@ export function Contact() {
 
     await new Promise(resolve => setTimeout(resolve, 1500))
 
-    console.log("[v0] Contact form submitted:", formData)
 
     setIsSubmitting(false)
     setIsSuccess(true)
